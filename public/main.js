@@ -7,11 +7,11 @@ update.addEventListener('click', () => {
         body: JSON.stringify({
           'name': 'Darth Vader',
           'quote': 'I find your lack of faith disturbing.'
-        }).then(res => {
-            if(res.ok) return res.json()
-        }).then(data => {
-            console.log(data)
-            window.location.reload(true)
         })
+    }).then(res => {
+        if(res.ok) return res.json()
+    }).then(data => {
+        console.log(data)
+        window.location.reload(true)
     })
 })
