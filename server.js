@@ -51,5 +51,14 @@ MongoClient.connect('mongodb://localhost:27017/', (err, database) => {
                 res.send(result)
             })
     })
+    app.delete('/quotes', (req, res) => {
+        db.collection('quotes')
+            .findOneAndDelete({
+                name: req.body.name
+            }, (err, result) => {
+                if(err) return res.send(500, err)
+                res.send({message: 'A Darth Vadar quote got deleted'})
+        })
+    })
 })
 
